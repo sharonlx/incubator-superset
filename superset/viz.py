@@ -181,6 +181,7 @@ class BaseViz(object):
                         df[DTTM_ALIAS], utc=False, format=timestamp_format)
                 if self.datasource.offset:
                     df[DTTM_ALIAS] += timedelta(hours=self.datasource.offset)
+                df[DTTM_ALIAS] += timedelta(hours=8)
                 df[DTTM_ALIAS] += self.time_shift
 
             self.df_metrics_to_num(df, query_obj.get('metrics') or [])
