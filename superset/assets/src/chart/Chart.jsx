@@ -102,7 +102,10 @@ class Chart extends React.PureComponent {
         prevProps.width !== this.props.width ||
         prevProps.lastRendered !== this.props.lastRendered)
     ) {
-      this.renderViz();
+      Promise.resolve().then(() => {
+        this.renderViz();
+      });
+
     }
   }
 
